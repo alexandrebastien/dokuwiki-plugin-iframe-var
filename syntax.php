@@ -83,7 +83,7 @@ class syntax_plugin_iframe extends DokuWiki_Syntax_Plugin {
         }else{
             $opts = array(
                         'title' => $data['alt'],
-                        'src'   => $data['url'],
+                        'src'   => str_replace('@USER@', $_SERVER['REMOTE_USER'], $data['url']), 
                         'style' => 'width:'.$data['width'].'; height:'.$data['height'],
                         );
             if(!$data['border']) $opts['frameborder'] = 0;
